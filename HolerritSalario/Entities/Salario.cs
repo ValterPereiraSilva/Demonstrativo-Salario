@@ -49,7 +49,7 @@ namespace Hollerrit.Entities
 
         public double HExtra100()
         {
-            return Hora * HorasExtra100 * 100 / 100 + Hora * HorasExtra100;
+            return Hora * HorasExtra100 * 1 + Hora * HorasExtra100;
         }
 
         public double Dsr()
