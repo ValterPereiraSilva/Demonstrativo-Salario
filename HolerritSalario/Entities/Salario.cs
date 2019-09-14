@@ -198,20 +198,17 @@ namespace Hollerrit.Entities
             sb.AppendLine();
             if(HExtra75() != 0.0)
             { sb.AppendLine(" Horas Extras a 75% é: R$ " + HExtra75().ToString("F2", CultureInfo.InvariantCulture)); }
-            else {}
             if(HExtra100() != 0.0)
             { sb.AppendLine(" Horas Extras a 100% é: R$ " + HExtra100().ToString("F2", CultureInfo.InvariantCulture)); }
-            else {}
             if(Dsr() != 0.0)
-            { sb.AppendLine(" Descanço Semanal Remunerado é: R$ " + Dsr().ToString("F2", CultureInfo.InvariantCulture)); }
-            else {}
+            { sb.AppendLine(" Descanço Semanal Remunerado é: R$ " + Dsr().ToString("F2", CultureInfo.InvariantCulture));
+                sb.AppendLine(); }
             if(AdicionalNoturno() != 0.0)
-            { sb.AppendLine(" Adicional Noturno é: R$ " + AdicionalNoturno().ToString("F2", CultureInfo.InvariantCulture)); }
-            else {}
+            { sb.AppendLine(" Adicional Noturno é: R$ " + AdicionalNoturno().ToString("F2", CultureInfo.InvariantCulture));
+                sb.AppendLine(); }
             if(AtrazosEFaltas() != 0.0)
-            { sb.AppendLine(" Atrazos e Faltas é: R$ " + AtrazosEFaltas().ToString("F2", CultureInfo.InvariantCulture)); }
-            else {}
-            sb.AppendLine();
+            { sb.AppendLine(" Atrazos e Faltas é: R$ " + AtrazosEFaltas().ToString("F2", CultureInfo.InvariantCulture));
+                sb.AppendLine(); }
             sb.AppendLine(" Salário Base para Cálculo do INSS é: R$ " + SalarioBaseInss().ToString("F2", CultureInfo.InvariantCulture));
             sb.AppendLine(" Desconto do INSS é: R$ " + CalculoInss().ToString("F2", CultureInfo.InvariantCulture));
             if (AliquotaInss() == 0.0)
