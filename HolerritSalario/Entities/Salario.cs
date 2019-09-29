@@ -20,7 +20,7 @@ namespace Hollerrit.Entities
         {
         }
 
-        public SalarioMensal(double hora, double horasExtra75, double horasExtra100, double adicionalnoturno, double atrazosEFalta, int domingosEFeriados, int dependente, string funcionario)
+        public SalarioMensal(double hora, double horasExtra75, double horasExtra100, double adicionalnoturno, double atrazosEFalta, int domingosEFeriados, int dependente, string funcionario) 
         {
             Hora = hora;
             HorasExtra75 = horasExtra75;
@@ -29,6 +29,17 @@ namespace Hollerrit.Entities
             AtrazosEFalta = atrazosEFalta;
             DomingosEFeriados = domingosEFeriados;
             Dependente = dependente;
+            Funcionario = funcionario;
+        }
+
+        public SalarioMensal(double hora, double horasExtra75, double horasExtra100, double adicionalnoturno, double atrazosEFalta, int domingosEFeriados, string funcionario)
+        {
+            Hora = hora;
+            HorasExtra75 = horasExtra75;
+            HorasExtra100 = horasExtra100;
+            Adicionalnoturno = adicionalnoturno;
+            AtrazosEFalta = atrazosEFalta;
+            DomingosEFeriados = domingosEFeriados;
             Funcionario = funcionario;
         }
 
@@ -214,14 +225,14 @@ namespace Hollerrit.Entities
             if (AliquotaInss() == 0.0)
             { sb.AppendLine(" Alíquota do INSS é: Fixa"); }
             else
-            { sb.AppendLine(" Alíquota do INSS é: " + AliquotaInss() + "%"); }
+            { sb.AppendLine(" Alíquota do INSS é: " + AliquotaInss().ToString("F1" , CultureInfo.InvariantCulture) + "%"); }
             sb.AppendLine();    
             sb.AppendLine(" Salário Base para Cálculo do IRRF é: R$ " + SalarioBaseIrrf().ToString("F2", CultureInfo.InvariantCulture));
             sb.AppendLine(" Desconto do IRRF é: R$ " + CalculoIrrf().ToString("F2", CultureInfo.InvariantCulture));
             if (AliquotaIrrf() == 0.0)
             { sb.AppendLine(" Alíquota do IRRF é: Isenta"); }
             else
-            { sb.AppendLine(" Alíquota do IRRF é: " + AliquotaIrrf() + "%"); }
+            { sb.AppendLine(" Alíquota do IRRF é: " + AliquotaIrrf().ToString("F1" , CultureInfo.InvariantCulture) + "%"); }
             sb.AppendLine();
             sb.AppendLine(" Total dos Vencimentos é: R$ " + Vencimentos().ToString("F2", CultureInfo.InvariantCulture));
             sb.AppendLine(" Total dos Descontos é: R$ " + Descontos().ToString("F2", CultureInfo.InvariantCulture));
